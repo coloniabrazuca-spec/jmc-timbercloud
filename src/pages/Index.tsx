@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FeatureCard } from "@/components/FeatureCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Link } from "react-router-dom";
@@ -297,6 +298,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton fixed />
     </div>
   );
 };

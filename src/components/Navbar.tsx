@@ -35,6 +35,11 @@ export const Navbar = () => {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button variant="outline" asChild className="border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white">
+              <a href="https://wa.me/5515998716029?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20no%20sistema%20JMC%20Madeira" target="_blank" rel="noopener noreferrer">
+                Suporte
+              </a>
+            </Button>
             <Button variant="ghost" asChild>
               <Link to="/auth">Entrar</Link>
             </Button>

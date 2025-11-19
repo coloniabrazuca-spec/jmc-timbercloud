@@ -14,16 +14,274 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      pallet_production: {
+        Row: {
+          created_at: string | null
+          created_by: string | null
+          id: string
+          notes: string | null
+          operator_name: string | null
+          pallet_size: string
+          production_date: string
+          quantity: number
+          wood_consumed: number
+        }
+        Insert: {
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          operator_name?: string | null
+          pallet_size: string
+          production_date?: string
+          quantity: number
+          wood_consumed: number
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          operator_name?: string | null
+          pallet_size?: string
+          production_date?: string
+          quantity?: number
+          wood_consumed?: number
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      sales: {
+        Row: {
+          buyer_contact: string | null
+          buyer_name: string
+          created_at: string | null
+          created_by: string | null
+          id: string
+          notes: string | null
+          payment_method: string | null
+          payment_status: string
+          product_type: string
+          quantity: number
+          sale_date: string
+          total_amount: number
+          unit_price: number
+        }
+        Insert: {
+          buyer_contact?: string | null
+          buyer_name: string
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          payment_method?: string | null
+          payment_status?: string
+          product_type: string
+          quantity: number
+          sale_date?: string
+          total_amount: number
+          unit_price: number
+        }
+        Update: {
+          buyer_contact?: string | null
+          buyer_name?: string
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          payment_method?: string | null
+          payment_status?: string
+          product_type?: string
+          quantity?: number
+          sale_date?: string
+          total_amount?: number
+          unit_price?: number
+        }
+        Relationships: []
+      }
+      suppliers: {
+        Row: {
+          address: string | null
+          contact: string | null
+          created_at: string | null
+          created_by: string | null
+          id: string
+          name: string
+          phone: string | null
+        }
+        Insert: {
+          address?: string | null
+          contact?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          name: string
+          phone?: string | null
+        }
+        Update: {
+          address?: string | null
+          contact?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          name?: string
+          phone?: string | null
+        }
+        Relationships: []
+      }
+      trucks: {
+        Row: {
+          created_at: string | null
+          created_by: string | null
+          delivery_date: string | null
+          driver_name: string
+          id: string
+          license_plate: string
+          notes: string | null
+          quantity: number
+          supplier_id: string | null
+          unit: string
+          wood_type: string
+        }
+        Insert: {
+          created_at?: string | null
+          created_by?: string | null
+          delivery_date?: string | null
+          driver_name: string
+          id?: string
+          license_plate: string
+          notes?: string | null
+          quantity: number
+          supplier_id?: string | null
+          unit?: string
+          wood_type: string
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string | null
+          delivery_date?: string | null
+          driver_name?: string
+          id?: string
+          license_plate?: string
+          notes?: string | null
+          quantity?: number
+          supplier_id?: string | null
+          unit?: string
+          wood_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trucks_supplier_id_fkey"
+            columns: ["supplier_id"]
+            isOneToOne: false
+            referencedRelation: "suppliers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      wood_stock: {
+        Row: {
+          created_at: string | null
+          created_by: string | null
+          entry_date: string
+          id: string
+          notes: string | null
+          quantity: number
+          supplier_id: string | null
+          unit: string
+          wood_type: string
+        }
+        Insert: {
+          created_at?: string | null
+          created_by?: string | null
+          entry_date?: string
+          id?: string
+          notes?: string | null
+          quantity?: number
+          supplier_id?: string | null
+          unit?: string
+          wood_type: string
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string | null
+          entry_date?: string
+          id?: string
+          notes?: string | null
+          quantity?: number
+          supplier_id?: string | null
+          unit?: string
+          wood_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wood_stock_supplier_id_fkey"
+            columns: ["supplier_id"]
+            isOneToOne: false
+            referencedRelation: "suppliers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "operator"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +408,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "operator"],
+    },
   },
 } as const
