@@ -16,7 +16,7 @@ export const Navbar = () => {
               <span className="text-primary-foreground font-display font-bold text-lg">J</span>
             </div>
             <span className="font-display font-bold text-xl text-foreground">
-              JMC TimberCloud
+              JMC Madeira
             </span>
           </Link>
 

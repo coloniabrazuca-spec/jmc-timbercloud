@@ -36,7 +36,7 @@ const Index = () => {
         <div className="absolute inset-0 gradient-hero" />
         <div className="relative z-10 container mx-auto px-4 text-primary-foreground">
           <h1 className="font-display font-extrabold text-5xl md:text-7xl mb-6 drop-shadow-lg">
-            JMC TimberCloud
+            JMC Madeira
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">
             Gestão Inteligente para Serrarias e Produção de Pallets
