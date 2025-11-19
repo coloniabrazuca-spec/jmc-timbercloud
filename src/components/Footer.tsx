@@ -12,7 +12,7 @@ export const Footer = () => {
               <div className="w-8 h-8 rounded gradient-forest flex items-center justify-center">
                 <span className="text-primary-foreground font-display font-bold text-lg">J</span>
               </div>
-              <span className="font-display font-bold text-lg">JMC TimberCloud</span>
+              <span className="font-display font-bold text-lg">JMC Madeira</span>
             </div>
             <p className="text-sm text-accent-foreground/80">
               Gestão inteligente para serrarias e produção de pallets.
@@ -84,7 +84,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-accent-foreground/20 mt-8 pt-8 text-center text-sm text-accent-foreground/60">
-          <p>&copy; 2025 JMC TimberCloud. Todos os direitos reservados.</p>
+          <p>&copy; 2025 JMC Madeira. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
