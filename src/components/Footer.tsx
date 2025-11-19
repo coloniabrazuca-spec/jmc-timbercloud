@@ -69,11 +69,13 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center space-x-2">
                 <Mail size={16} className="text-primary" />
-                <span>contato@jmctimber.com</span>
+                <span>contato@jmcmadeira.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone size={16} className="text-primary" />
-                <span>(11) 9999-9999</span>
+                <a href="https://wa.me/5515998716029?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20no%20sistema%20JMC%20Madeira" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-fast">
+                  +55 15 99871-6029
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin size={16} className="text-primary" />
